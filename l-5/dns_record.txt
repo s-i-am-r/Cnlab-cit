@@ -1,0 +1,10 @@
+www.amazon.com 305.251.242.103
+www.google.com 142.250.64.78
+www.facebook.com 157.240.22.35
+www.microsoft.com 40.113.201.201
+www.apple.com 17.253.143.10
+www.ibm.com 129.42.38.1
+www.netflix.com 52.26.122.13
+www.reddit.com 151.101.65.140
+www.twitter.com 104.244.42.1
+www.linkedin.com 108.174.10.15
