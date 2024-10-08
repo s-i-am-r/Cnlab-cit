@@ -1,25 +1,16 @@
 #include<stdio.h>
 #include<stdint.h>
-int finddeg(uint8_t n){
-    #define sz 0b10000000
-    int i=0;
-    while (! (n& sz))
-    {
-        i++;
-        n<<=1;
-    }
-    return 7-i;
-    
-}
-int finddeg32(uint32_t n){
-    uint32_t szz=1<<31;
+
+int finddeg(uint64_t n,uint8_t size){
+    size*=8;
+    uint32_t szz=1<<(size-1);
     int i=0;
     while (! (n& szz))
     {
         i++;
         n<<=1;
     }
-    return 31-i;
+    return size-1-i;
     
 }
 void p_bin(uint32_t b){
@@ -32,17 +23,25 @@ void p_bin(uint32_t b){
     
 }
 uint8_t crc_check(uint32_t num,uint8_t divisor){
-    #define ch 0b11110000000000000000000000000000
+    int degree = finddeg(divisor,sizeof(divisor));
+    uint32_t ch=1;
+    for (size_t i = 0; i < degree; i++)
+    {
+        ch<<=1;
+        ch|=1;
+        
+    }
+    ch<<=sizeof(ch)*8-4;
     if (ch&num)
     {
         return -1;
+
     }
-    int m=finddeg32(num);
+    int m=finddeg(num,sizeof(num));
     
-    int degree = finddeg(divisor);
-    uint32_t ptr = 1<<m+degree-4,d_p=m+degree-4;
     num<<=degree;
     uint8_t rag =num>>m;
+    uint32_t ptr=1<<(m-1),d_p=m-1;
     p_bin(num);
     p_bin(divisor);
     while (ptr)
