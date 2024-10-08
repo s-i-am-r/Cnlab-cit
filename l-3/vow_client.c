@@ -26,7 +26,6 @@ int main(int argc, char const* argv[])
 		printf("Error...\n"); 
 		return 1;
 	} 
-
 		char strData[255]; 
 		bzero(strData,sizeof(strData));
 		char filename[50];
