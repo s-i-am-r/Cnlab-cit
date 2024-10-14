@@ -60,7 +60,6 @@ uint8_t crc_check(uint32_t num,uint8_t divisor){
 }
 int main(){
     uint8_t x=crc_check(0b11010,0b1001);
-	printf("===============\n");
     p_bin(x);
 
 
