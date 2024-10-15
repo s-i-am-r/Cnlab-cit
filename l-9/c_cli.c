@@ -52,7 +52,7 @@ int main() {
     appendCRC(message, transmittedMessage);
     printf("Transmitting message: %s\n", transmittedMessage);
 
-    
+    transmittedMessage[2]='0';
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         printf("\nSocket creation error\n");
         return -1;

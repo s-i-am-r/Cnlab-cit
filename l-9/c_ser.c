@@ -25,7 +25,7 @@ void calculateCRC(char *message, char *crc) {
     
     for (int i = 0; i < messageLength; i++) {
         if (appendedMessage[i] == '1') {
-            for (int j = 0; j < divisorLength; j++) {
+            for (int j = 0; j < divisorLength; j++) {                                                                           
                 appendedMessage[i + j] = (appendedMessage[i + j] == divisor[j]) ? '0' : '1';
             }
         }
