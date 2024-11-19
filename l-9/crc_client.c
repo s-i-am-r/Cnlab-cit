@@ -44,7 +44,7 @@ int main() {
     // Sample message to send
     uint32_t message = 0b11010;
     uint8_t crc = crc_check(message, 0b1001);
-
+    crc=0;
     // Creating socket file descriptor
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         printf("\n Socket creation error \n");
