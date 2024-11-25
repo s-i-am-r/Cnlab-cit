@@ -1,0 +1,5 @@
+- .multicast✔️
+- .broadcast✔️
+- .crc
+- .parity
+- .ftp/telnet
